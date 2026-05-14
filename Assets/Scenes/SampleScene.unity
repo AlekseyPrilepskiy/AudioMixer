@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 118634204}
   - component: {fileID: 118634205}
+  - component: {fileID: 118634206}
   m_Layer: 5
   m_Name: SliderSFX
   m_TagString: Untagged
@@ -208,19 +209,21 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 675574001}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetSFXVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &118634206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118634203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
+  _manager: {fileID: 675574001}
+  _mixerParameter: SFXVolume
 --- !u!1 &120425702
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +613,7 @@ GameObject:
   - component: {fileID: 364640060}
   - component: {fileID: 364640059}
   - component: {fileID: 364640058}
+  - component: {fileID: 364640061}
   m_Layer: 5
   m_Name: Button 3
   m_TagString: Untagged
@@ -680,19 +684,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 364640059}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 675574001}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &364640059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,6 +723,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364640056}
   m_CullTransparentMesh: 1
+--- !u!114 &364640061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364640056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxButton
+  _manager: {fileID: 675574001}
+  _sfxIndex: 2
 --- !u!1 &391224643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1062,7 @@ GameObject:
   - component: {fileID: 582372256}
   - component: {fileID: 582372255}
   - component: {fileID: 582372254}
+  - component: {fileID: 582372257}
   m_Layer: 5
   m_Name: Button 2
   m_TagString: Untagged
@@ -1126,19 +1133,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 582372255}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 675574001}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &582372255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,6 +1172,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582372252}
   m_CullTransparentMesh: 1
+--- !u!114 &582372257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582372252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxButton
+  _manager: {fileID: 675574001}
+  _sfxIndex: 1
 --- !u!1 &609997272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609997273}
   - component: {fileID: 609997274}
+  - component: {fileID: 609997275}
   m_Layer: 5
   m_Name: SliderMusic
   m_TagString: Untagged
@@ -1266,19 +1276,21 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 675574001}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetMusicVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &609997275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609997272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
+  _manager: {fileID: 675574001}
+  _mixerParameter: MusicVolume
 --- !u!1 &623791707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,6 +2297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371739254}
   - component: {fileID: 1371739255}
+  - component: {fileID: 1371739256}
   m_Layer: 5
   m_Name: SliderMaster
   m_TagString: Untagged
@@ -2364,19 +2377,21 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 675574001}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SetMasterVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1371739256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371739253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
+  _manager: {fileID: 675574001}
+  _mixerParameter: MasterVolume
 --- !u!1 &1386707793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,6 +2857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610132144}
   - component: {fileID: 1610132145}
+  - component: {fileID: 1610132146}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -2917,9 +2933,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675574001}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: ToggleMute
+      - m_Target: {fileID: 1610132146}
+        m_TargetAssemblyTypeName: MuteToggle, Assembly-CSharp
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2930,6 +2946,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &1610132146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610132143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e2f3def7fe1594c96600da7fa21363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MuteToggle
+  _manager: {fileID: 675574001}
+  _masterSlider: {fileID: 1371739255}
 --- !u!1 &1647962805
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3176,7 @@ GameObject:
   - component: {fileID: 1868984309}
   - component: {fileID: 1868984308}
   - component: {fileID: 1868984307}
+  - component: {fileID: 1868984310}
   m_Layer: 5
   m_Name: Button 1
   m_TagString: Untagged
@@ -3216,19 +3247,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1868984308}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 675574001}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1868984308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3267,6 +3286,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868984305}
   m_CullTransparentMesh: 1
+--- !u!114 &1868984310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868984305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxButton
+  _manager: {fileID: 675574001}
+  _sfxIndex: 0
 --- !u!1 &1936663441
 GameObject:
   m_ObjectHideFlags: 0
