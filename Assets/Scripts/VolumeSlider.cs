@@ -1,11 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
 public class VolumeSlider : MonoBehaviour
 {
-    [SerializeField] private AudioSystem _audioSystem;
-    [SerializeField] private AudioChannel _channel;
+    [SerializeField] private AudioMixerGroup _mixerGroup;
 
     private Slider _slider;
 
@@ -26,6 +26,6 @@ public class VolumeSlider : MonoBehaviour
 
     private void HandleSliderChange(float value)
     {
-        _audioSystem.SetVolume(_channel, value);
+        AudioMath.ApplyLinearVolume(_mixerGroup, value);
     }
 }

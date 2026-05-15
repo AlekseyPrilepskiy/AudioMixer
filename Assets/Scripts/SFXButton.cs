@@ -4,8 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class SfxButton : MonoBehaviour
 {
-    [SerializeField] private AudioSystem _audioSystem;
-    [SerializeField] private int _sfxIndex;
+    [SerializeField] private AudioSource _audioSource;
 
     private Button _button;
 
@@ -26,6 +25,6 @@ public class SfxButton : MonoBehaviour
 
     private void HandleButtonClick()
     {
-        _audioSystem.PlaySfx(_sfxIndex);
+        _audioSource.Play();
     }
 }

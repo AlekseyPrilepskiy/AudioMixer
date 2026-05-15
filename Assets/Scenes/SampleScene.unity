@@ -222,8 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  _audioSystem: {fileID: 675574001}
-  _channel: 2
+  _mixerGroup: {fileID: 2582774034536141034, guid: 44818e2e50c00954780351a12390dbff, type: 2}
 --- !u!1 &120425702
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,8 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxButton
-  _audioSystem: {fileID: 675574001}
-  _sfxIndex: 2
+  _audioSource: {fileID: 1647962806}
 --- !u!1 &391224643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,8 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxButton
-  _audioSystem: {fileID: 675574001}
-  _sfxIndex: 1
+  _audioSource: {fileID: 1034780781}
 --- !u!1 &609997272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,8 +1286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  _audioSystem: {fileID: 675574001}
-  _channel: 1
+  _mixerGroup: {fileID: -1524601090699656009, guid: 44818e2e50c00954780351a12390dbff, type: 2}
 --- !u!1 &623791707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,55 +1545,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650387203}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 482.40027, y: 164.18097, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &675574000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 675574002}
-  - component: {fileID: 675574001}
-  m_Layer: 0
-  m_Name: AudioSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &675574001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675574000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae7fe6ff21816c43a922c91f4d98cef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  _mainMixer: {fileID: 24100000, guid: 44818e2e50c00954780351a12390dbff, type: 2}
-  _sfxSources:
-  - {fileID: 650387204}
-  - {fileID: 1034780781}
-  - {fileID: 1647962806}
---- !u!4 &675574002
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675574000}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 482.40027, y: 164.18097, z: 0}
@@ -2390,8 +2337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  _audioSystem: {fileID: 675574001}
-  _channel: 0
+  _mixerGroup: {fileID: 24300002, guid: 44818e2e50c00954780351a12390dbff, type: 2}
 --- !u!1 &1386707793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,7 +2892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e2f3def7fe1594c96600da7fa21363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuteToggle
-  _audioSystem: {fileID: 675574001}
+  _masterGroup: {fileID: 24300002, guid: 44818e2e50c00954780351a12390dbff, type: 2}
   _masterSlider: {fileID: 1371739255}
 --- !u!1 &1647962805
 GameObject:
@@ -3286,8 +3232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxButton
-  _audioSystem: {fileID: 675574001}
-  _sfxIndex: 0
+  _audioSource: {fileID: 650387204}
 --- !u!1 &1936663441
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,7 +3495,6 @@ SceneRoots:
   - {fileID: 120425704}
   - {fileID: 1122543910}
   - {fileID: 1936663444}
-  - {fileID: 675574002}
   - {fileID: 650387205}
   - {fileID: 1034780782}
   - {fileID: 1647962807}

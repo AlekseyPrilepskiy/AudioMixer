@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class Mute : MonoBehaviour
 {
-    [SerializeField] private AudioSystem _audioSystem;
+    [SerializeField] private AudioMixerGroup _masterGroup;
     [SerializeField] private Slider _masterSlider;
 
     private Toggle _toggle;
@@ -16,8 +17,7 @@ public class Mute : MonoBehaviour
     private void OnEnable()
     {
         _toggle.onValueChanged.AddListener(HandleToggleChange);
-
-        _audioSystem.SetMute(!_toggle.isOn, _masterSlider.value);
+        HandleToggleChange(_toggle.isOn);
     }
 
     private void OnDisable()
@@ -27,6 +27,13 @@ public class Mute : MonoBehaviour
 
     private void HandleToggleChange(bool isMuted)
     {
-        _audioSystem.SetMute(!isMuted, _masterSlider.value);
+        if (isMuted)
+        {
+            AudioMath.ApplyLinearVolume(_masterGroup, _masterSlider.value);
+        }
+        else
+        {
+            _masterGroup.audioMixer.SetFloat(_masterGroup.name, AudioMath.MuteValue);
+        }
     }
 }
