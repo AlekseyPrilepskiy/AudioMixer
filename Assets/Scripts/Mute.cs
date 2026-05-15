@@ -1,16 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MuteToggle : MonoBehaviour
+public class Mute : MonoBehaviour
 {
-    [SerializeField] private AudioMixerManager _manager;
+    [SerializeField] private AudioSystem _audioSystem;
     [SerializeField] private Slider _masterSlider;
 
-    private bool _isMuted = false;
+    private Toggle _toggle;
 
-    public void Toggle()
+    private void Awake()
     {
-        _isMuted = !_isMuted;
-        _manager.SetMute(_isMuted, _masterSlider.value);
+        _toggle = GetComponent<Toggle>();
+    }
+
+    private void OnEnable()
+    {
+        _toggle.onValueChanged.AddListener(HandleToggleChange);
+
+        _audioSystem.SetMute(!_toggle.isOn, _masterSlider.value);
+    }
+
+    private void OnDisable()
+    {
+        _toggle.onValueChanged.RemoveListener(HandleToggleChange);
+    }
+
+    private void HandleToggleChange(bool isMuted)
+    {
+        _audioSystem.SetMute(!isMuted, _masterSlider.value);
     }
 }

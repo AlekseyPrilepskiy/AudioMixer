@@ -4,11 +4,28 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class SfxButton : MonoBehaviour
 {
-    [SerializeField] private AudioMixerManager _manager;
+    [SerializeField] private AudioSystem _audioSystem;
     [SerializeField] private int _sfxIndex;
+
+    private Button _button;
 
     private void Awake()
     {
-        GetComponent<Button>().onClick.AddListener(() => _manager.PlaySfx(_sfxIndex));
+        _button = GetComponent<Button>();
+    }
+
+    private void OnEnable()
+    {
+        _button.onClick.AddListener(HandleButtonClick);
+    }
+
+    private void OnDisable()
+    {
+        _button.onClick.RemoveListener(HandleButtonClick);
+    }
+
+    private void HandleButtonClick()
+    {
+        _audioSystem.PlaySfx(_sfxIndex);
     }
 }

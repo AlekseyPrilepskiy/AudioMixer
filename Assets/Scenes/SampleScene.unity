@@ -222,8 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  _manager: {fileID: 675574001}
-  _mixerParameter: SFXVolume
+  _audioSystem: {fileID: 675574001}
+  _channel: 2
 --- !u!1 &120425702
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxButton
-  _manager: {fileID: 675574001}
+  _audioSystem: {fileID: 675574001}
   _sfxIndex: 2
 --- !u!1 &391224643
 GameObject:
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxButton
-  _manager: {fileID: 675574001}
+  _audioSystem: {fileID: 675574001}
   _sfxIndex: 1
 --- !u!1 &609997272
 GameObject:
@@ -1289,8 +1289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  _manager: {fileID: 675574001}
-  _mixerParameter: MusicVolume
+  _audioSystem: {fileID: 675574001}
+  _channel: 1
 --- !u!1 &623791707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,7 +1568,7 @@ GameObject:
   - component: {fileID: 675574002}
   - component: {fileID: 675574001}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: AudioSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2390,8 +2390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5ffabea272d8e479c000106be80875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  _manager: {fileID: 675574001}
-  _mixerParameter: MasterVolume
+  _audioSystem: {fileID: 675574001}
+  _channel: 0
 --- !u!1 &1386707793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2932,19 +2932,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1610132146}
-        m_TargetAssemblyTypeName: MuteToggle, Assembly-CSharp
-        m_MethodName: Toggle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 1
 --- !u!114 &1610132146
 MonoBehaviour:
@@ -2958,7 +2946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e2f3def7fe1594c96600da7fa21363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuteToggle
-  _manager: {fileID: 675574001}
+  _audioSystem: {fileID: 675574001}
   _masterSlider: {fileID: 1371739255}
 --- !u!1 &1647962805
 GameObject:
@@ -3298,7 +3286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2523ad6ab91b46468cc0b13da3b47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxButton
-  _manager: {fileID: 675574001}
+  _audioSystem: {fileID: 675574001}
   _sfxIndex: 0
 --- !u!1 &1936663441
 GameObject:
